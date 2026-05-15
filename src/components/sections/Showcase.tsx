@@ -30,12 +30,12 @@ export function Showcase() {
           {SHOWCASE_ITEMS.map((item, index) => (
             <Reveal key={item.id} delay={index * 0.05}>
               <div
-                className={`grid items-center gap-10 lg:grid-cols-2 lg:gap-16 ${
+                className={`grid min-w-0 items-center gap-8 sm:gap-10 lg:grid-cols-2 lg:gap-16 ${
                   item.reverse ? "lg:[direction:rtl]" : ""
                 }`}
               >
-                <div className={item.reverse ? "lg:[direction:ltr]" : ""}>
-                  <h3 className="text-2xl font-bold tracking-tight sm:text-3xl">{item.title}</h3>
+                <div className={`min-w-0 ${item.reverse ? "lg:[direction:ltr]" : ""}`}>
+                  <h3 className="text-xl font-bold tracking-tight sm:text-2xl md:text-3xl">{item.title}</h3>
                   <p className="mt-4 text-text-muted">{item.description}</p>
                   <ul className="mt-6 space-y-2">
                     {item.bullets.map((b) => (
@@ -46,8 +46,10 @@ export function Showcase() {
                     ))}
                   </ul>
                 </div>
-                <div className={`flex justify-center ${item.reverse ? "lg:[direction:ltr]" : ""}`}>
-                  {mockups[item.id]}
+                <div
+                  className={`flex min-w-0 w-full max-w-full justify-center px-0 ${item.reverse ? "lg:[direction:ltr]" : ""}`}
+                >
+                  <div className="w-full max-w-full min-w-0">{mockups[item.id]}</div>
                 </div>
               </div>
             </Reveal>

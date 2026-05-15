@@ -76,7 +76,7 @@ export function PanelScrollArea({
       )}
 
       <div
-        className="pointer-events-none absolute right-2 top-3 bottom-3 z-20 w-1 rounded-full bg-white/[0.05]"
+        className="pointer-events-none absolute right-2 top-3 bottom-3 z-20 hidden w-1 rounded-full bg-white/[0.05] sm:block"
         aria-hidden
       >
         <div
@@ -91,7 +91,7 @@ export function PanelScrollArea({
       <div
         ref={scrollRef}
         onScroll={updateScroll}
-        className={`panel-scroll-accent pr-1 ${className}`}
+        className={`panel-scroll-accent pr-3 sm:pr-4 ${className}`}
       >
         {children}
       </div>

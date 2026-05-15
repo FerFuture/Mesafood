@@ -25,18 +25,18 @@ export function Navbar() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
+      className={`fixed inset-x-0 top-0 z-50 pt-[env(safe-area-inset-top,0px)] transition-all duration-300 sm:pt-0 ${
         scrolled
           ? "border-b border-border bg-bg-primary/95 backdrop-blur-xl shadow-lg shadow-black/20"
           : "bg-transparent backdrop-blur-md"
       }`}
     >
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
-        <a href="#" className="flex items-center gap-2.5">
+      <nav className="mx-auto flex max-w-7xl min-w-0 items-center justify-between gap-2 px-4 py-4 sm:px-6 lg:px-8">
+        <a href="#" className="flex min-w-0 items-center gap-2 sm:gap-2.5">
           <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-accent/15 glow-green">
             <Bot className="h-5 w-5 text-accent" aria-hidden />
           </span>
-          <span className="text-lg font-bold tracking-tight">Mesafood</span>
+          <span className="min-w-0 truncate text-base font-bold tracking-tight sm:text-lg">Mesafood</span>
         </a>
 
         <ul className="hidden items-center gap-8 md:flex">
@@ -73,7 +73,7 @@ export function Navbar() {
         <motion.div
           initial={reduced ? false : { opacity: 0, y: -8 }}
           animate={{ opacity: 1, y: 0 }}
-          className="border-t border-border bg-bg-primary/98 px-4 py-6 md:hidden"
+          className="max-h-[min(70vh,calc(100dvh-5rem))] overflow-y-auto border-t border-border bg-bg-primary/98 px-4 py-6 md:hidden"
         >
           <ul className="flex flex-col gap-4">
             {NAV_LINKS.map((link) => (

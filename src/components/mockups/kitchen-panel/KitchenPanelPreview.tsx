@@ -14,7 +14,7 @@ function OrderCard({
   return (
     <article className="rounded-xl border border-white/[0.08] bg-white/[0.03] p-3.5 sm:p-4">
       <div className="flex items-start justify-between gap-2">
-        <p className="text-[10px] text-white/40 sm:text-[11px]">
+        <p className="min-w-0 break-words text-[10px] text-white/40 sm:text-[11px]">
           <span className="font-medium text-white/55">#{id}</span>
           <span className="mx-1.5 text-white/20">·</span>
           {datetime}
@@ -57,7 +57,7 @@ function OrderCard({
 export function KitchenPanelPreview() {
   return (
     <div
-      className="relative flex w-full max-w-2xl flex-col overflow-hidden rounded-2xl border border-white/[0.08] bg-[#020817] shadow-[0_32px_80px_rgba(0,0,0,0.55),0_0_0_1px_rgba(255,255,255,0.04)_inset,0_0_80px_rgba(20,241,178,0.06)]"
+      className="relative flex w-full min-w-0 max-w-2xl flex-col overflow-hidden rounded-2xl border border-white/[0.08] bg-[#020817] shadow-[0_32px_80px_rgba(0,0,0,0.55),0_0_0_1px_rgba(255,255,255,0.04)_inset,0_0_80px_rgba(20,241,178,0.06)] max-sm:rounded-xl"
       role="img"
       aria-label="Vista previa del panel de cocina Mesafood"
     >
@@ -66,8 +66,8 @@ export function KitchenPanelPreview() {
         aria-hidden
       />
 
-      <header className="flex items-start justify-between gap-3 border-b border-white/[0.06] px-4 py-3.5 sm:px-5">
-        <div>
+      <header className="flex items-start justify-between gap-3 border-b border-white/[0.06] px-3 py-3 sm:px-5 sm:py-3.5">
+        <div className="min-w-0">
           <h3 className="text-lg font-bold tracking-tight text-white sm:text-xl">Cocina</h3>
           <p className="mt-0.5 text-[11px] text-white/40">Restaurante demo</p>
         </div>

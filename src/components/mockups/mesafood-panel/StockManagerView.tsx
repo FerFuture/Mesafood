@@ -36,7 +36,7 @@ export function StockManagerView() {
             <p className="mb-2 text-[10px] font-medium uppercase tracking-wide text-white/35">
               Agregar ingrediente al stock
             </p>
-            <div className="grid grid-cols-2 gap-2 sm:grid-cols-[1fr_72px_88px_auto] sm:items-end">
+            <div className="grid grid-cols-1 gap-2 sm:grid-cols-[1fr_72px_88px_auto] sm:items-end">
               <div>
                 <p className="mb-1 text-[9px] uppercase text-white/30">Ingrediente</p>
                 <div className="rounded-lg border border-white/10 bg-black/20 px-2.5 py-2 text-[10px] text-white/25">
@@ -55,7 +55,7 @@ export function StockManagerView() {
                   UNIDAD
                 </div>
               </div>
-              <span className="rounded-lg bg-accent px-3 py-2 text-center text-[10px] font-bold text-[#020817] sm:py-2.5">
+              <span className="rounded-lg bg-accent px-3 py-2.5 text-center text-[10px] font-bold text-[#020817]">
                 Agregar
               </span>
             </div>

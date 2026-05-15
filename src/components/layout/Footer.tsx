@@ -3,7 +3,7 @@ import { FOOTER_LINKS, UI } from "../../lib/constants";
 
 export function Footer() {
   return (
-    <footer className="border-t border-border bg-bg-primary">
+    <footer className="border-t border-border bg-bg-primary pb-[env(safe-area-inset-bottom,0px)]">
       <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-5">
           <div className="lg:col-span-2">

@@ -12,7 +12,7 @@ import { Trust } from "./components/sections/Trust";
 
 function App() {
   return (
-    <div className="min-h-screen bg-bg-primary text-text-primary antialiased">
+    <div className="min-h-screen overflow-x-hidden bg-bg-primary text-text-primary antialiased">
       <Navbar />
       <main>
         <Hero />

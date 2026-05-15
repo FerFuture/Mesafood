@@ -114,23 +114,25 @@ export function StatisticsView({ compact = false }: StatisticsViewProps) {
       <div className="rounded-xl border border-white/[0.08] bg-white/[0.02] p-3">
         <p className="mb-2 text-[11px] font-semibold text-white">Cobros por método de pago</p>
         <p className="mb-3 text-[9px] text-white/35">Últimos 30 días</p>
-        <div className="overflow-hidden rounded-lg border border-white/[0.06]">
-          <table className="w-full text-left text-[10px]">
+        <div className="-mx-1 overflow-x-auto rounded-lg border border-white/[0.06] sm:mx-0">
+          <table className="w-full min-w-[280px] text-left text-[9px] sm:text-[10px]">
             <thead>
               <tr className="border-b border-white/[0.06] bg-white/[0.03] text-white/40">
-                <th className="px-2.5 py-2 font-medium">Método</th>
-                <th className="px-2.5 py-2 font-medium">Pedidos</th>
-                <th className="px-2.5 py-2 font-medium">Recaudado</th>
-                <th className="px-2.5 py-2 font-medium">%</th>
+                <th className="whitespace-nowrap px-2 py-2 font-medium sm:px-2.5">Método</th>
+                <th className="whitespace-nowrap px-2 py-2 font-medium sm:px-2.5">Pedidos</th>
+                <th className="whitespace-nowrap px-2 py-2 font-medium sm:px-2.5">Recaudado</th>
+                <th className="whitespace-nowrap px-2 py-2 font-medium sm:px-2.5">%</th>
               </tr>
             </thead>
             <tbody>
               {PAYMENT_METHODS.map((row) => (
                 <tr key={row.method} className="border-t border-white/[0.04] text-white/65">
-                  <td className="px-2.5 py-2">{row.method}</td>
-                  <td className="px-2.5 py-2">{row.orders}</td>
-                  <td className="px-2.5 py-2 text-accent">{row.collected}</td>
-                  <td className="px-2.5 py-2">{row.share}</td>
+                  <td className="max-w-[120px] truncate px-2 py-2 sm:max-w-none sm:px-2.5">
+                    {row.method}
+                  </td>
+                  <td className="px-2 py-2 sm:px-2.5">{row.orders}</td>
+                  <td className="whitespace-nowrap px-2 py-2 text-accent sm:px-2.5">{row.collected}</td>
+                  <td className="px-2 py-2 sm:px-2.5">{row.share}</td>
                 </tr>
               ))}
             </tbody>

@@ -32,7 +32,7 @@ export function Benefits() {
         </div>
 
         <Reveal>
-          <div className="grid gap-10 rounded-2xl border border-border bg-bg-card/50 p-8 sm:grid-cols-3 lg:p-12">
+          <div className="grid gap-8 rounded-2xl border border-border bg-bg-card/50 p-5 sm:grid-cols-3 sm:gap-10 sm:p-8 lg:p-12">
             {STATS.map((stat) => (
               <AnimatedCounter
                 key={stat.label}

@@ -20,9 +20,9 @@ export function Pricing() {
           {PRICING_PLANS.map((plan, i) => (
             <Reveal key={plan.name} delay={i * 0.1}>
               <div
-                className={`relative flex h-full flex-col rounded-2xl border p-8 transition-all ${
+                className={`relative flex h-full flex-col rounded-2xl border p-6 transition-all sm:p-8 ${
                   plan.highlighted
-                    ? "border-accent bg-bg-card glow-green scale-[1.02] shadow-[0_0_60px_rgba(20,241,178,0.15)]"
+                    ? "border-accent bg-bg-card shadow-[0_0_60px_rgba(20,241,178,0.15)] lg:scale-[1.02] lg:glow-green"
                     : "border-border bg-bg-card/80 hover:border-accent/30"
                 }`}
               >

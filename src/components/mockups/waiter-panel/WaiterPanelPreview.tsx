@@ -1,5 +1,5 @@
-import { PanelScrollArea } from "../../ui/PanelScrollArea";
 import { Minus, Plus } from "lucide-react";
+import { PanelScrollArea } from "../../ui/PanelScrollArea";
 import {
   WAITER_MENU,
   WAITER_ORDER_ITEM_COUNT,
@@ -31,7 +31,7 @@ function QuantityControl({ qty }: { qty: number }) {
 export function WaiterPanelPreview() {
   return (
     <div
-      className="relative flex w-full max-w-xl flex-col overflow-hidden rounded-2xl border border-white/[0.08] bg-[#020817] shadow-[0_32px_80px_rgba(0,0,0,0.55),0_0_0_1px_rgba(255,255,255,0.04)_inset,0_0_80px_rgba(20,241,178,0.06)]"
+      className="relative flex w-full min-w-0 max-w-full flex-col overflow-hidden rounded-2xl border border-white/[0.08] bg-[#020817] shadow-[0_32px_80px_rgba(0,0,0,0.55),0_0_0_1px_rgba(255,255,255,0.04)_inset,0_0_80px_rgba(20,241,178,0.06)] max-sm:rounded-xl"
       role="img"
       aria-label="Vista previa del panel de mozo Mesafood"
     >
@@ -108,16 +108,16 @@ export function WaiterPanelPreview() {
           </PanelScrollArea>
         </div>
 
-        <footer className="border-t border-white/[0.08] bg-[#020817] px-4 py-3 sm:px-5">
-          <div className="flex items-end justify-between gap-3">
-            <div>
+        <footer className="border-t border-white/[0.08] bg-[#020817] px-3 py-3 sm:px-5">
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between sm:gap-3">
+            <div className="min-w-0">
               <p className="text-[10px] text-white/40">Total</p>
               <p className="text-xl font-bold text-accent sm:text-2xl">
                 {formatWaiterPrice(WAITER_ORDER_TOTAL)}
               </p>
               <p className="mt-0.5 text-[10px] text-white/35">{WAITER_ORDER_ITEM_COUNT} ítem(s)</p>
             </div>
-            <span className="shrink-0 rounded-xl bg-accent px-4 py-3 text-center text-[11px] font-bold text-[#020817] shadow-[0_0_24px_rgba(20,241,178,0.35)] sm:px-5 sm:text-xs">
+            <span className="w-full shrink-0 rounded-xl bg-accent px-4 py-3 text-center text-[11px] font-bold text-[#020817] shadow-[0_0_24px_rgba(20,241,178,0.35)] sm:w-auto sm:px-5 sm:text-xs">
               Enviar a cocina
             </span>
           </div>
