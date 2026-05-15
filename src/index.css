@@ -1,0 +1,114 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg-primary: #020817;
+  --color-bg-secondary: #0f172a;
+  --color-bg-card: #111827;
+  --color-border: #1e293b;
+  --color-accent: #14f1b2;
+  --color-accent-hover: #0fd39b;
+  --color-text-primary: #f8fafc;
+  --color-text-muted: #94a3b8;
+  --color-danger: #ef4444;
+  --font-sans: "Plus Jakarta Sans", system-ui, sans-serif;
+}
+
+:root {
+  --bg-primary: #020817;
+  --bg-secondary: #0f172a;
+  --bg-card: #111827;
+  --border: #1e293b;
+  --accent: #14f1b2;
+  --accent-hover: #0fd39b;
+  --glow: rgba(20, 241, 178, 0.25);
+  --text-primary: #f8fafc;
+  --text-muted: #94a3b8;
+  --danger: #ef4444;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.glow-green {
+  box-shadow: 0 0 24px var(--glow), 0 0 48px rgba(20, 241, 178, 0.12);
+}
+
+.glass-card {
+  background: rgba(17, 24, 39, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+}
+
+.gradient-mesh {
+  background:
+    radial-gradient(ellipse 80% 50% at 20% 40%, rgba(20, 241, 178, 0.08), transparent),
+    radial-gradient(ellipse 60% 40% at 80% 20%, rgba(15, 23, 42, 0.9), transparent),
+    radial-gradient(ellipse 50% 60% at 50% 100%, rgba(20, 241, 178, 0.05), transparent);
+}
+
+/* Mockups de panel: scroll con barra personalizada Mesafood */
+.panel-scroll-accent {
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.panel-scroll-accent::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+.panel-scroll-hint-icon {
+  animation: panel-scroll-hint 2.2s ease-in-out infinite;
+}
+
+@keyframes panel-scroll-hint {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.65;
+  }
+  50% {
+    transform: translateY(4px);
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .panel-scroll-hint-icon {
+    animation: none;
+    opacity: 0.85;
+  }
+}
+
+.panel-scroll-x {
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.panel-scroll-x::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
