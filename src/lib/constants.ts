@@ -253,7 +253,7 @@ export const TESTIMONIALS = [
 export const PRICING_PLANS = [
   {
     name: "Inicial",
-    price: "$39.900",
+    priceKey: "initial" as const,
     period: "/mes",
     description: "Para locales pequeños que empiezan con operación digital.",
     features: [
@@ -276,7 +276,7 @@ export const PRICING_PLANS = [
   },
   {
     name: "Profesional",
-    price: "$79.900",
+    priceKey: "pro" as const,
     period: "/mes",
     description: "Plataforma completa para restaurantes en crecimiento que necesitan control.",
     features: [
@@ -305,6 +305,7 @@ export const PRICING_PLANS = [
   },
   {
     name: "Empresarial",
+    priceKey: "custom" as const,
     price: "A medida",
     period: "",
     description: "Grupos con varias sucursales, integraciones a medida y SLAs.",

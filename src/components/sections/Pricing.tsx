@@ -1,16 +1,44 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Check } from "lucide-react";
 import { getPlanWhatsAppUrl, PRICING_PLANS, UI } from "../../lib/constants";
+import {
+  detectPricingRegion,
+  formatPlanPrice,
+  type PricingRegion,
+} from "../../lib/pricing";
 import { Button } from "../ui/Button";
 import { Reveal } from "../ui/Reveal";
 import { SectionHeader } from "../ui/SectionHeader";
 
 const DEFAULT_SELECTED_INDEX = PRICING_PLANS.findIndex((plan) => plan.highlighted);
 
+function getDisplayedPrice(plan: (typeof PRICING_PLANS)[number], region: PricingRegion) {
+  if (plan.priceKey === "custom") {
+    return plan.price;
+  }
+
+  return formatPlanPrice(region, plan.priceKey);
+}
+
 export function Pricing() {
   const [selectedIndex, setSelectedIndex] = useState(
     DEFAULT_SELECTED_INDEX >= 0 ? DEFAULT_SELECTED_INDEX : 0,
   );
+  const [region, setRegion] = useState<PricingRegion>("AR");
+
+  useEffect(() => {
+    let active = true;
+
+    detectPricingRegion().then((detected) => {
+      if (active) {
+        setRegion(detected);
+      }
+    });
+
+    return () => {
+      active = false;
+    };
+  }, []);
 
   return (
     <section id="pricing" className="py-24 lg:py-32">
@@ -26,6 +54,7 @@ export function Pricing() {
         <div className="grid gap-6 lg:grid-cols-3 lg:gap-8">
           {PRICING_PLANS.map((plan, i) => {
             const isSelected = selectedIndex === i;
+            const price = getDisplayedPrice(plan, region);
 
             return (
               <Reveal key={plan.name} delay={i * 0.1}>
@@ -55,7 +84,7 @@ export function Pricing() {
                   <h3 className="text-lg font-semibold">{plan.name}</h3>
                   <p className="mt-2 text-sm text-text-muted">{plan.description}</p>
                   <p className="mt-6">
-                    <span className="text-4xl font-bold">{plan.price}</span>
+                    <span className="text-4xl font-bold">{price}</span>
                     {plan.period && <span className="text-text-muted">{plan.period}</span>}
                   </p>
                   <ul className="mt-8 flex-1 space-y-3">
