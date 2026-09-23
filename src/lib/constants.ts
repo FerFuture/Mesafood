@@ -199,7 +199,7 @@ export const BENEFITS = [
 
 export const STATS = [
   { value: 2400000, suffix: "+", label: "Pedidos procesados", prefix: "" },
-  { value: 850, suffix: "+", label: "Restaurantes activos", prefix: "" },
+  { value: 113, suffix: "+", label: "Restaurantes activos", prefix: "" },
   { value: 32, suffix: "%", label: "Cocina más rápida", prefix: "" },
 ];
 
