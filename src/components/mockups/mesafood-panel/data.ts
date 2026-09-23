@@ -20,13 +20,13 @@ export const MENU_PRODUCTS = [
   },
   {
     name: "filetes",
-    category: "SEGUNDOS",
+    category: "PLATO ESPECIAL",
     description: "filetes de pollo",
     price: 5000,
   },
   {
     name: "guiso de lentejas",
-    category: "SEGUNDOS",
+    category: "PLATO ESPECIAL",
     description: "guiso de lentejas",
     price: 10000,
   },
@@ -39,34 +39,36 @@ export const MENU_PRODUCTS = [
 ] as const;
 
 export const DAILY_STATS = [
-  { label: "Ventas hoy", value: "$ 0,00" },
-  { label: "Pedidos hoy", value: "1", highlight: true },
-  { label: "Entregados", value: "0" },
-  { label: "Cancelados", value: "0", danger: true },
-  { label: "Delivery", value: "0" },
-  { label: "Retiro local", value: "0" },
-  { label: "Ticket prom.", value: "$ 0,00", warn: true },
+  { label: "Ventas hoy", value: "$ 48.600,00" },
+  { label: "Pedidos hoy", value: "27", highlight: true },
+  { label: "Entregados", value: "22" },
+  { label: "Cancelados", value: "2", danger: true },
+  { label: "Delivery", value: "9" },
+  { label: "Retiro local", value: "13" },
+  { label: "Ticket prom.", value: "$ 1.800,00", warn: true },
 ] as const;
 
 export const SALES_WEEK = [
-  { day: "SÁB", amount: 0 },
-  { day: "DOM", amount: 0 },
-  { day: "LUN", amount: 0 },
-  { day: "MAR", amount: 0 },
-  { day: "MIÉ", amount: 0 },
+  { day: "SÁB", amount: 8200 },
+  { day: "DOM", amount: 11500 },
+  { day: "LUN", amount: 6400 },
+  { day: "MAR", amount: 9800 },
+  { day: "MIÉ", amount: 7200 },
   { day: "JUE", amount: 14000 },
-  { day: "VIE", amount: 0 },
+  { day: "VIE", amount: 15600 },
 ] as const;
 
+export const SALES_WEEK_TOTAL = SALES_WEEK.reduce((sum, day) => sum + day.amount, 0);
+
 export const TOP_PRODUCTS = [
-  { name: "pedido de prueba", qty: 60 },
+  { name: "Docena de empanadas y gaseosa", qty: 60 },
   { name: "papas fritas", qty: 42 },
   { name: "conito de papas y pancho", qty: 28 },
-  { name: "pizza con gaseosa", qty: 13 },
+  { name: "pizza entera con gaseosa", qty: 13 },
   { name: "pizza común", qty: 7 },
 ] as const;
 
 export const PAYMENT_METHODS = [
-  { method: "Mercado Pago", orders: 1, collected: "$ 20,00", share: "0.0%" },
-  { method: "Efectivo", orders: 44, collected: "$ 498.663,00", share: "100.0%" },
+  { method: "Mercado Pago", orders: 18, collected: "$ 186.400,00", share: "37.2%" },
+  { method: "Efectivo", orders: 31, collected: "$ 314.280,00", share: "62.8%" },
 ] as const;

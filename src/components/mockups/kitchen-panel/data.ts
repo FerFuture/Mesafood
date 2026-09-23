@@ -17,8 +17,8 @@ export const KITCHEN_ORDERS: KitchenOrder[] = [
     typeLabel: "Local / retiro",
     typeVariant: "local",
     table: "5",
-    items: ["las empanadas y empanadas × 2"],
-    footer: "Mozo: mozo",
+    items: ["Docena de empanadas y gaseosa × 2"],
+    footer: "Mozo: Luis",
   },
   {
     id: "efc9f466",
@@ -26,8 +26,8 @@ export const KITCHEN_ORDERS: KitchenOrder[] = [
     status: "confirmed",
     typeLabel: "Delivery mozo",
     typeVariant: "delivery",
-    items: ["las empanadas y empanadas"],
-    footer: "Dirección: Mi casa",
+    items: ["Docena de empanadas y gaseosa"],
+    footer: "Dirección: Av. San Martín 1240, Mendoza",
   },
   {
     id: "73796114",
@@ -36,7 +36,7 @@ export const KITCHEN_ORDERS: KitchenOrder[] = [
     typeLabel: "Local / retiro",
     typeVariant: "local",
     table: "5",
-    items: ["pizza con gaseosa × 4"],
-    footer: "Mozo: mozo",
+    items: ["pizza entera con gaseosa × 4"],
+    footer: "Mozo: Luis",
   },
 ];

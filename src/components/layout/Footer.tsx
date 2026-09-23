@@ -1,5 +1,24 @@
 import { Bot, Globe, Mail, MessageCircle } from "lucide-react";
-import { FOOTER_LINKS, UI } from "../../lib/constants";
+import { Link } from "react-router-dom";
+import { CONTACT_EMAIL, FOOTER_LINKS, UI, WEBSITE_URL, WHATSAPP_URL } from "../../lib/constants";
+
+function FooterLink({ href, label }: { href: string; label: string }) {
+  const className = "text-sm text-text-muted hover:text-accent";
+
+  if (href.startsWith("mailto:")) {
+    return (
+      <a href={href} className={className}>
+        {label}
+      </a>
+    );
+  }
+
+  return (
+    <Link to={href} className={className}>
+      {label}
+    </Link>
+  );
+}
 
 export function Footer() {
   return (
@@ -7,21 +26,37 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-5">
           <div className="lg:col-span-2">
-            <a href="#" className="flex items-center gap-2">
+            <Link to="/" className="flex items-center gap-2">
               <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-accent/15">
                 <Bot className="h-4 w-4 text-accent" />
               </span>
               <span className="font-bold">Mesafood</span>
-            </a>
+            </Link>
             <p className="mt-4 max-w-xs text-sm text-text-muted">{UI.footerTagline}</p>
             <div className="mt-6 flex gap-4">
-              <a href="#" aria-label={UI.aria.website} className="text-text-muted hover:text-accent">
+              <a
+                href={WEBSITE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={UI.aria.website}
+                className="text-text-muted hover:text-accent"
+              >
                 <Globe className="h-5 w-5" />
               </a>
-              <a href="mailto:demo@mesafood.app" aria-label={UI.aria.email} className="text-text-muted hover:text-accent">
+              <a
+                href={`mailto:${CONTACT_EMAIL}`}
+                aria-label={UI.aria.email}
+                className="text-text-muted hover:text-accent"
+              >
                 <Mail className="h-5 w-5" />
               </a>
-              <a href="#" aria-label={UI.aria.whatsapp} className="text-text-muted hover:text-accent">
+              <a
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={UI.aria.whatsapp}
+                className="text-text-muted hover:text-accent"
+              >
                 <MessageCircle className="h-5 w-5" />
               </a>
             </div>
@@ -33,9 +68,7 @@ export function Footer() {
             <ul className="mt-4 space-y-2">
               {FOOTER_LINKS.product.map((l) => (
                 <li key={l.label}>
-                  <a href={l.href} className="text-sm text-text-muted hover:text-accent">
-                    {l.label}
-                  </a>
+                  <FooterLink href={l.href} label={l.label} />
                 </li>
               ))}
             </ul>
@@ -47,9 +80,7 @@ export function Footer() {
             <ul className="mt-4 space-y-2">
               {FOOTER_LINKS.company.map((l) => (
                 <li key={l.label}>
-                  <a href={l.href} className="text-sm text-text-muted hover:text-accent">
-                    {l.label}
-                  </a>
+                  <FooterLink href={l.href} label={l.label} />
                 </li>
               ))}
             </ul>
@@ -61,9 +92,7 @@ export function Footer() {
             <ul className="mt-4 space-y-2">
               {FOOTER_LINKS.legal.map((l) => (
                 <li key={l.label}>
-                  <a href={l.href} className="text-sm text-text-muted hover:text-accent">
-                    {l.label}
-                  </a>
+                  <FooterLink href={l.href} label={l.label} />
                 </li>
               ))}
             </ul>

@@ -10,8 +10,20 @@ import {
   Zap,
 } from "lucide-react";
 
-export const WHATSAPP_URL = "https://wa.me/5490000000000";
-export const DEMO_EMAIL = "demo@mesafood.app";
+const WHATSAPP_NUMBER = "5492612733747";
+const WHATSAPP_MESSAGE =
+  "Hola, estoy interesado en Mesafood y me gustaría conocer más sobre la plataforma para mi restaurante.";
+const WHATSAPP_DEMO_MESSAGE =
+  "Hola, estoy interesado en Mesafood y me gustaría solicitar una demo de la plataforma para mi restaurante.";
+
+function whatsAppUrl(message: string) {
+  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+}
+
+export const WHATSAPP_URL = whatsAppUrl(WHATSAPP_MESSAGE);
+export const WHATSAPP_DEMO_URL = whatsAppUrl(WHATSAPP_DEMO_MESSAGE);
+export const CONTACT_EMAIL = "reff.future@gmail.com";
+export const WEBSITE_URL = "https://fernandojimenez.pro";
 
 export const UI = {
   requestDemo: "Solicitar demo",
@@ -76,13 +88,14 @@ export const UI = {
 };
 
 export const NAV_LINKS = [
-  { label: "Funciones", href: "#features" },
-  { label: "Beneficios", href: "#benefits" },
-  { label: "Precios", href: "#pricing" },
-  { label: "Demo", href: "#demo" },
+  { label: "Funciones", href: "/#features" },
+  { label: "Beneficios", href: "/#benefits" },
+  { label: "Precios", href: "/#pricing" },
+  { label: "Demo", href: "/#demo" },
 ];
 
 export const TRUST_LOGOS = [
+  "Restaurante Illimani",
   "Bistro Nova",
   "La Cocina",
   "Urban Grill",
@@ -257,7 +270,9 @@ export const PRICING_PLANS = [
       "Soporte por correo",
     ],
     highlighted: false,
-    cta: "Comenzar",
+    cta: "Solicitar demo",
+    whatsappMessage:
+      "Hola, estoy interesado en el plan Inicial de Mesafood y me gustaría solicitar una demo para evaluar la plataforma en mi restaurante.",
   },
   {
     name: "Profesional",
@@ -285,6 +300,8 @@ export const PRICING_PLANS = [
     ],
     highlighted: true,
     cta: "Solicitar demo",
+    whatsappMessage:
+      "Hola, estoy interesado en el plan Profesional de Mesafood y me gustaría solicitar una demo de la plataforma.",
   },
   {
     name: "Empresarial",
@@ -312,23 +329,28 @@ export const PRICING_PLANS = [
       "Escalabilidad personalizada",
     ],
     highlighted: false,
-    cta: "Contactar ventas",
+    cta: "Contactar",
+    whatsappMessage:
+      "Hola, estoy interesado en una solución Mesafood personalizada según las necesidades de mi negocio. Me gustaría conversar sobre opciones a medida, integraciones y alcance del proyecto.",
   },
-];
+] as const;
+
+export function getPlanWhatsAppUrl(message: string) {
+  return whatsAppUrl(message);
+}
 
 export const FOOTER_LINKS = {
   product: [
-    { label: "Funciones", href: "#features" },
-    { label: "Precios", href: "#pricing" },
-    { label: "Demo", href: "#demo" },
+    { label: "Funciones", href: "/#features" },
+    { label: "Precios", href: "/#pricing" },
+    { label: "Demo", href: "/#demo" },
   ],
   company: [
-    { label: "Nosotros", href: "#" },
-    { label: "Empleos", href: "#" },
-    { label: "Contacto", href: `mailto:${DEMO_EMAIL}` },
+    { label: "Nosotros", href: "/nosotros" },
+    { label: "Contacto", href: `mailto:${CONTACT_EMAIL}` },
   ],
   legal: [
-    { label: "Privacidad", href: "#" },
-    { label: "Términos", href: "#" },
+    { label: "Privacidad", href: "/privacidad" },
+    { label: "Términos", href: "/terminos" },
   ],
 };

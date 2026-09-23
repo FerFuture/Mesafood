@@ -2,6 +2,7 @@ import {
   DAILY_STATS,
   PAYMENT_METHODS,
   SALES_WEEK,
+  SALES_WEEK_TOTAL,
   TOP_PRODUCTS,
 } from "./data";
 
@@ -57,7 +58,12 @@ export function StatisticsView({ compact = false }: StatisticsViewProps) {
         <div className="rounded-xl border border-white/[0.08] bg-white/[0.02] p-3">
           <div className="mb-3">
             <p className="text-[11px] font-semibold text-white">Ventas últimos 7 días</p>
-            <p className="text-sm font-bold text-accent">$ 14.000,00</p>
+            <p className="text-sm font-bold text-accent">
+              {`$ ${SALES_WEEK_TOTAL.toLocaleString("es-AR", {
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2,
+              })}`}
+            </p>
           </div>
           <div className="flex h-20 items-end justify-between gap-1">
             {SALES_WEEK.map((day) => {

@@ -44,7 +44,7 @@ export function WaiterPanelPreview() {
         <div>
           <h3 className="text-lg font-bold tracking-tight text-white sm:text-xl">Mozo</h3>
           <p className="mt-0.5 text-[11px] text-white/40">
-            mozo · <span className="text-white/55">Restaurante demo</span>
+            Luis · <span className="text-white/55">Bistro Nova</span>
           </p>
         </div>
         <span className="shrink-0 rounded-lg border border-white/15 bg-transparent px-3 py-1.5 text-[11px] text-white/70">

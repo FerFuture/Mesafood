@@ -1,4 +1,4 @@
-import { UI } from "../../lib/constants";
+import { UI, WHATSAPP_DEMO_URL } from "../../lib/constants";
 import { Button } from "../ui/Button";
 import { Reveal } from "../ui/Reveal";
 
@@ -23,7 +23,7 @@ export function FinalCTA() {
               <p className="mx-auto mt-4 max-w-xl text-base text-text-muted sm:text-lg">
                 {UI.sections.finalCta.subtitle}
               </p>
-              <Button href="#demo" variant="primary" className="mt-8 w-full max-w-xs !px-8 !py-3.5 text-base glow-green sm:mt-10 sm:w-auto sm:!px-10 sm:!py-4">
+              <Button href={WHATSAPP_DEMO_URL} variant="primary" className="mt-8 w-full max-w-xs !px-8 !py-3.5 text-base glow-green sm:mt-10 sm:w-auto sm:!px-10 sm:!py-4">
                 {UI.requestDemo}
               </Button>
             </div>

@@ -15,9 +15,9 @@ export const WAITER_MENU: WaiterMenuCategory[] = [
   {
     category: "COMBOS",
     items: [
-      { name: "las empanadas y empanadas", price: 12000, qty: 1 },
-      { name: "pedido de prueba", price: 10, qty: 0 },
-      { name: "pizza con gaseosa", price: 10000, qty: 1 },
+      { name: "Docena de empanadas y gaseosa", price: 12000, qty: 1 },
+      { name: "2 porciones de pizza con gaseosa", price: 8000, qty: 0 },
+      { name: "pizza entera con gaseosa", price: 10000, qty: 1 },
     ],
   },
   {

@@ -1,6 +1,7 @@
 import { motion, useReducedMotion } from "framer-motion";
 import { Bot, Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { NAV_LINKS, UI } from "../../lib/constants";
 import { Button } from "../ui/Button";
 
@@ -32,28 +33,28 @@ export function Navbar() {
       }`}
     >
       <nav className="mx-auto flex max-w-7xl min-w-0 items-center justify-between gap-2 px-4 py-4 sm:px-6 lg:px-8">
-        <a href="#" className="flex min-w-0 items-center gap-2 sm:gap-2.5">
+        <Link to="/" className="flex min-w-0 items-center gap-2 sm:gap-2.5">
           <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-accent/15 glow-green">
             <Bot className="h-5 w-5 text-accent" aria-hidden />
           </span>
           <span className="min-w-0 truncate text-base font-bold tracking-tight sm:text-lg">Mesafood</span>
-        </a>
+        </Link>
 
         <ul className="hidden items-center gap-8 md:flex">
           {NAV_LINKS.map((link) => (
             <li key={link.href}>
-              <a
-                href={link.href}
+              <Link
+                to={link.href}
                 className="text-sm text-text-muted transition-colors hover:text-accent"
               >
                 {link.label}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>
 
         <div className="hidden md:block">
-          <Button href="#demo" variant="primary" className="!px-5 !py-2.5 text-sm">
+          <Button href="/#demo" variant="primary" className="!px-5 !py-2.5 text-sm">
             {UI.requestDemo}
           </Button>
         </div>
@@ -78,17 +79,17 @@ export function Navbar() {
           <ul className="flex flex-col gap-4">
             {NAV_LINKS.map((link) => (
               <li key={link.href}>
-                <a
-                  href={link.href}
+                <Link
+                  to={link.href}
                   className="text-lg text-text-muted hover:text-accent"
                   onClick={() => setMobileOpen(false)}
                 >
                   {link.label}
-                </a>
+                </Link>
               </li>
             ))}
             <li className="pt-2">
-              <Button href="#demo" variant="primary" className="w-full">
+              <Button href="/#demo" variant="primary" className="w-full">
                 {UI.requestDemo}
               </Button>
             </li>
